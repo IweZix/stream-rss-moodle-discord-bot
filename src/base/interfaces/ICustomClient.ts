@@ -1,13 +1,9 @@
-import { Client, Collection } from 'discord.js';
-
-import { ICommand } from '@/base/interfaces/ICommand';
+import { Client } from 'discord.js';
 
 /**
  * Custom client interface
  */
 export interface ICustomClient extends Client {
-    commands: Collection<string, ICommand>;
-    interactions: Collection<string, ICommand>;
 
     /**
      * Start the client

@@ -1,4 +1,4 @@
-import { Client, Events } from 'discord.js';
+import { Events } from 'discord.js';
 import rss from '@/rss/rss';
 import FastLogging from 'fastlogging';
 
