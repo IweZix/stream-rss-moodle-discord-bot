@@ -12,10 +12,10 @@ const logger = new FastLogging(true, true);
  * @param {Client} client The client
  * @returns {Promise<void>} sends a new article to the channel
  */
-async function rss(client: Client): Promise<void> {
+async function rss(client: Client, url: string, channelId: string): Promise<void> {
     try {
-        const channel = client.channels.cache.get(config.channelId) as TextChannel;
-        const feed = await parser.parseURL(config.rssUrl);
+        const channel = client.channels.cache.get(channelId) as TextChannel;
+        const feed = await parser.parseURL(url);
         const latestItem = feed.items[0];
         const title: string = latestItem.title ?? 'An article has been posted';
         const link: string = latestItem.link ?? config.defaultUrl;
