@@ -1,4 +1,4 @@
-import { Events } from 'discord.js';
+import { Events, Guild } from 'discord.js';
 import rss from '@/rss/rss';
 import FastLogging from 'fastlogging';
 import { config } from '@/config';
@@ -19,7 +19,7 @@ module.exports = {
 
         logger.success(`[Bot] => ${client.user.username} is online`);
 
-        const guilds = client.guilds.cache.map(guild => guild);
+        const guilds = client.guilds.cache.map((guild: Guild) => guild);
         for (const guild of guilds) {
             await guild.channels.fetch();
         }
