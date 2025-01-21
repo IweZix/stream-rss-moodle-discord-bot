@@ -1,4 +1,4 @@
-import { Events, Guild } from 'discord.js';
+import { ActivityType, Events, Guild } from 'discord.js';
 import rss from '@/rss/rss';
 import FastLogging from 'fastlogging';
 import { config } from '@/config';
@@ -16,6 +16,10 @@ module.exports = {
      * @param {Client} client The client
      */
     async run(client: any) {
+
+        client.user.setActivity(`Moodle`, {
+            type: ActivityType.Watching
+        })
 
         logger.success(`[Bot] => ${client.user.username} is online`);
 
