@@ -21,7 +21,7 @@ async function rss(client: Client, url: string, channelId: string): Promise<void
         const link: string = latestItem.link ?? config.defaultUrl;
         const pubDate: string = latestItem.pubDate ?? 'No date available';
         const description: string = latestItem.contentSnippet ?? 'An article has been posted but no description is available.';
-
+        
         if (!channel) {
             logger.error(`[RSS] => Channel not found`);
             return;
@@ -36,7 +36,7 @@ async function rss(client: Client, url: string, channelId: string): Promise<void
         const now = new Date();
         
         if (pubDateObj.getTime() < now.getTime() - 300000) {
-            logger.log(`[RSS] => No new items`);
+            // logger.log(`[RSS] => No new items`);
             return;
         }
         

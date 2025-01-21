@@ -1,7 +1,7 @@
 {
-  "name": "logmaster",
+  "name": "annonce",
   "version": "1.0.0",
-  "description": "logmaster desc",
+  "description": "annonces",
   "main": "index.js",
   "scripts": {
     "test": "echo \"No test specified\"",

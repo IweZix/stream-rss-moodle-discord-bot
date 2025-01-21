@@ -19,6 +19,12 @@ module.exports = {
 
         logger.success(`[Bot] => ${client.user.username} is online`);
 
+        const guilds = client.guilds.cache.map(guild => guild);
+        for (const guild of guilds) {
+            await guild.channels.fetch();
+        }
+        
+
         setInterval(() => {
             rss(client, config.rssUrlAnnonce, config.channelIdAnnonce);
             rss(client, config.rssUrlBin1, config.channelIdBin1);
