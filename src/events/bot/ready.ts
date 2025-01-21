@@ -24,7 +24,6 @@ module.exports = {
             await guild.channels.fetch();
         }
         
-
         setInterval(() => {
             rss(client, config.rssUrlAnnonce, config.channelIdAnnonce);
             rss(client, config.rssUrlBin1, config.channelIdBin1);
